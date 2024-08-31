@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+</head>
+
+<body>
+    <!--Using Internal styling-->
+    <style>
+        *
+        {
+            padding: 0;
+            margin: 0;
+        }
+        /* Style the body */
+        body {
+            background-image: url(img2.jpg);
+           background-size: 100% 200%;
+           background-repeat: no-repeat;
+           width: 50%;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: aqua;
+            padding: 10px;
+            margin-top: 10%;
+            margin-left: 18%;
+            margin-bottom: 30px;
+            border-radius: 10px 100px;
+            width: 50%;
+            display: flex;
+            width: 200px;
+            flex-direction: column;
+        }
+        /* Style the input tag */
+        #guessnumber {
+
+            width: 200px;
+            padding: 10px;
+            margin-left: 20%;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+        }
+
+        button {
+
+            padding: 10px;
+            width: 100px;
+            letter-spacing: 4px;
+            margin-left: 28%;
+            border-radius: 15px;
+            border: 0;
+            display: flex;
+            flex-direction: row;
+            background-color: blue;
+
+
+        }
+        /* Style the paragraphh tags */ 
+        #result {
+           
+            padding: 14px;
+            margin-top: 20px;
+            margin-left: 23%;
+            background-color: black;
+            color: white;
+            width: 143px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 15px;
+        }
+
+        #score {
+            
+            padding: 15px;
+            margin-top: 20px;
+            margin-left: 23%;
+            background-color: black;
+            color: white;
+            width: 143px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 15px;
+        }
+    </style>
+
+    <!--Html Tags and Elements-->
+    
+    <h1>Guess the number</h1>
+    <input type="text" id="guessnumber">
+    <button onclick="Check()">Check</button>
+    <p id="result">Your Wrong/Right</p>
+    <p id="score">Score:10</p>
+</body>
+
+      <!--Using the Internal scripiting-->
+
+    <script>
+    //Select the input box,paragraph tag
+
+    var vig = document.getElementById("guessnumber")
+    var kis = document.getElementById("result")
+    var dha = Math.floor(Math.random() * 10) + 1
+    var liv = document.getElementById("score")
+    var lov = 10
+
+    //create a function for button
+    function Check() {
+
+        var vic = vig.value
+        if (dha == vic) {
+            console.log("Right")
+            kis.textContent = "Right..!"
+            alert("You Won..")
+        }
+        else {
+            console.log("Wrong")
+            lov = lov - 1
+            liv.textContent = "score:" + lov
+            kis.textContent = "Wrong..!"
+        }
+    }
+
+     </script>
+
+</html>
